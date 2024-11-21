@@ -10,6 +10,7 @@ declare module "@remix-run/node" {
 
 export default defineConfig({
   plugins: [
+    cloudflareDevProxyVitePlugin(),
     remix({
       future: {
         v3_fetcherPersist: true,
@@ -19,7 +20,6 @@ export default defineConfig({
         v3_lazyRouteDiscovery: true,
       },
     }),
-    cloudflareDevProxyVitePlugin(),
     tsconfigPaths(),
   ],
   ssr: {
